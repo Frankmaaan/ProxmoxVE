@@ -14,11 +14,24 @@ Exercise vigilance regarding copycat or coat-tailing sites that seek to exploit 
 All LXC instances created using this repository come pre-installed with Midnight Commander, which is a command-line tool (`mc`) that offers a user-friendly file and directory management interface for the terminal environment.
 
 
+## 2025-06-06
+
+### 🆕 New Scripts
+
+  - Zot-Registry ([#5016](https://github.com/community-scripts/ProxmoxVE/pull/5016))
+
+### 🚀 Updated Scripts
+
+  - #### 🐞 Bug Fixes
+
+    - zipline: fix old upload copy from v3 to v4 [@MickLesk](https://github.com/MickLesk) ([#5015](https://github.com/community-scripts/ProxmoxVE/pull/5015))
+
 ## 2025-06-05
 
 ### 🆕 New Scripts
 
-  - gitea-mirror ([#4967](https://github.com/community-scripts/ProxmoxVE/pull/4967))
+  - Lyrion Music Server ([#4992](https://github.com/community-scripts/ProxmoxVE/pull/4992))
+- gitea-mirror ([#4967](https://github.com/community-scripts/ProxmoxVE/pull/4967))
 
 ### 🚀 Updated Scripts
 
@@ -27,6 +40,10 @@ All LXC instances created using this repository come pre-installed with Midnight
     - Zipline: Fix PostgreSQL install [@tremor021](https://github.com/tremor021) ([#4989](https://github.com/community-scripts/ProxmoxVE/pull/4989))
     - Homarr: add nodejs upgrade [@CrazyWolf13](https://github.com/CrazyWolf13) ([#4974](https://github.com/community-scripts/ProxmoxVE/pull/4974))
     - add FUSE to rclone [@Frankmaaan](https://github.com/Frankmaaan) ([#4972](https://github.com/community-scripts/ProxmoxVE/pull/4972))
+
+  - #### ✨ New Features
+
+    - Zitadel: Upgrade Install to PSQL 17 [@MickLesk](https://github.com/MickLesk) ([#5000](https://github.com/community-scripts/ProxmoxVE/pull/5000))
 
 ### 🌐 Website
 
