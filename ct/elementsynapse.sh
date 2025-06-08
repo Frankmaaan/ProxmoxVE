@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-source <(curl -fsSL https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/misc/build.func)
+source <(curl -fsSL https://raw.githubusercontent.com/Frankmaaan/ProxmoxVE/dev/misc/build.func)
 # Copyright (c) 2021-2025 community-scripts ORG
 # Author: tremor021
 # License: MIT | https://github.com/community-scripts/ProxmoxVE/raw/main/LICENSE
@@ -58,7 +58,14 @@ function update_script() {
       curl -fsSL "https://github.com/etkecc/synapse-admin/archive/refs/tags/v${RELEASE}.tar.gz" -o "$temp_file"
       tar xzf "$temp_file" -C /opt/synapse-admin --strip-components=1
       cd /opt/synapse-admin
+      $STD yarn global add serve
       $STD yarn install --ignore-engines
+      $STD yarn build
+      mv ./dist ../ && \
+        rm -rf * && \
+        mv ../dist ./
+      # previous version had different service, can be removed later
+      sed -i 's|^ExecStart=.*|ExecStart=/usr/local/bin/serve -s dist -l 5173|' /etc/systemd/system/synapse-admin.service
       systemctl start synapse-admin
       echo "${RELEASE}" >/opt/"${APP}"_version.txt
       rm -f "$temp_file"
