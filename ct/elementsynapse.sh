@@ -47,7 +47,7 @@ function update_script() {
   $STD apt-get -y upgrade
   msg_ok "Updated $APP LXC"
 
-  if [[ -f /systemd/system/synapse-admin.service ]]; then
+  if [[ -f /etc/systemd/system/synapse-admin.service ]]; then
     msg_info "Updating Synapse-Admin"
     RELEASE=$(curl -fsSL https://api.github.com/repos/etkecc/synapse-admin/releases/latest | grep "tag_name" | awk '{print substr($2, 3, length($2)-4) }')
     if [[ "${RELEASE}" != "$(cat /opt/"${APP}"_version.txt)" ]] || [[ ! -f /opt/${APP}_version.txt ]]; then
